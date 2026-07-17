@@ -3,6 +3,10 @@ name: Build Perler Bead Converter
 on:
   push:
     branches: [ master, main ]
+    paths-ignore:
+      - '*.md'
+      - '*.txt'
+      - '.gitignore'
   workflow_dispatch:
 
 jobs:
