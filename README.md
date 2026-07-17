@@ -1,7 +1,8 @@
-# 拼豆图纸转换器&Fuse-bead-generator
+# 拼豆图纸转换器/Fuse-bead-generator
 一款将图片转换为拼豆图纸的桌面应用程序。
+
 A desktop application that converts ordinary images into fuse bead pattern charts.
-## 功能特点&Features
+## 功能特点/Features
 - 支持多种图片格式导入（PNG、JPG、BMP等）
 - 支持221色和291色MARD色号规格
 - 多种抖动模式（无抖动、有序抖动、Floyd-Steinberg）
@@ -9,6 +10,7 @@ A desktop application that converts ordinary images into fuse bead pattern chart
 - CIEDE2000颜色匹配算法，更准确的颜色还原
 - 实时预览和编辑功能
 - 导出预览图、网格图和颜色清单
+- 
 -Supports importing multiple image formats: PNG, JPG, BMP, etc.
 -Compatible with two standard MARD bead palettes: 221-color & 291-color sets
 -CIEDE2000 color difference algorithm for high-precision color matching & restoration
