@@ -54,7 +54,7 @@ test_functionality.py
 extract_watermark.py
 
 # Cache
-color_lookup_cache.npz
+# color_lookup_cache.npz
 
 # Build output
 程序/
