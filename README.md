@@ -11,11 +11,11 @@
 - CIEDE2000颜色匹配算法，更准确的颜色还原
 - 实时预览和编辑功能
 - 导出预览图、网格图和颜色清单
-- 版权保护水印
+
 
 ## 下载
 
-从 [Releases](https://github.com/你的用户名/拼豆图纸转换器/releases) 页面下载对应平台的版本：
+从 Releases 页面下载对应平台的版本：
 
 - **Windows**: `拼豆图纸转换器-Windows.exe`
 - **macOS**: `拼豆图纸转换器-macOS`
@@ -54,27 +54,15 @@
 
 ## 技术栈
 
-<<<<<<< Updated upstream
 - Python
-=======
 - Python 3.11
->>>>>>> Stashed changes
 - PyQt5 + PyQt-Fluent-Widgets
-- Pillow（图像处理）
-- NumPy + SciPy（数值计算）
+- Pillow
+- NumPy + SciPy
 - CIEDE2000颜色匹配算法
 
 ## 作者
-
 - 作者：Danstfool
-<<<<<<< Updated upstream
 ## 版权
-未经许可禁止商用
-=======
-- 邮箱：danstfool@163.com
-
-## 版权
-
 版权所有 © 2026 Danstfool
 未经许可禁止商用
->>>>>>> Stashed changes
