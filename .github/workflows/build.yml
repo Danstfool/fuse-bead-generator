@@ -1,0 +1,99 @@
+name: Build Perler Bead Converter
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build Windows exe
+        run: pyinstaller --noconfirm --onefile --windowed --add-data "MARD_291.txt;." --add-data "color_lookup_cache.npz;." --name "拼豆图纸转换器-Windows" --hidden-import numpy --hidden-import PIL --hidden-import scipy --hidden-import PyQt5 --hidden-import qfluentwidgets main.py
+      
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: dist/拼豆图纸转换器-Windows.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build macOS app
+        run: |
+          pyinstaller --noconfirm --onefile --windowed \
+            --add-data "MARD_291.txt:." \
+            --add-data "color_lookup_cache.npz:." \
+            --name "拼豆图纸转换器-macOS" \
+            --hidden-import numpy \
+            --hidden-import PIL \
+            --hidden-import scipy \
+            --hidden-import PyQt5 \
+            --hidden-import qfluentwidgets \
+            main.py
+      
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-build
+          path: dist/拼豆图纸转换器-macOS
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build Linux binary
+        run: |
+          pyinstaller --noconfirm --onefile --windowed \
+            --add-data "MARD_291.txt:." \
+            --add-data "color_lookup_cache.npz:." \
+            --name "拼豆图纸转换器-Linux" \
+            --hidden-import numpy \
+            --hidden-import PIL \
+            --hidden-import scipy \
+            --hidden-import PyQt5 \
+            --hidden-import qfluentwidgets \
+            main.py
+      
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-build
+          path: dist/拼豆图纸转换器-Linux
