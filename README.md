@@ -10,7 +10,7 @@ A desktop application that converts ordinary images into fuse bead pattern chart
 - CIEDE2000颜色匹配算法，更准确的颜色还原
 - 实时预览和编辑功能
 - 导出预览图、网格图和颜色清单
-- 
+
 -Supports importing multiple image formats: PNG, JPG, BMP, etc.
 -Compatible with two standard MARD bead palettes: 221-color & 291-color sets
 -CIEDE2000 color difference algorithm for high-precision color matching & restoration
